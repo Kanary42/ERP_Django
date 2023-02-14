@@ -1,4 +1,4 @@
-from blog.models import Order
+from blog import Order
 from django.contrib.auth.models import User
 from django.db import models
 from django.utils import timezone
@@ -7,6 +7,7 @@ from django.utils import timezone
 class WeldMat(models.Model):
     material = models.TextField()
     mass = models.IntegerField()
+    date_changed = models.DateTimeField(default=timezone.now)
 
 
 class WeldMatUse(models.Model):
