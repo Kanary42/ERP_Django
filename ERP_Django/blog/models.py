@@ -49,22 +49,3 @@ class Control(models.Model):
     date_out = models.DateTimeField(default=timezone.now)
     is_accepted_out = models.BooleanField()
     order_num = models.ForeignKey(Order, on_delete=models.CASCADE)
-
-
-class WeldMat(models.Model):
-    material = models.TextField()
-    mass = models.IntegerField()
-
-
-class WeldMatUse(models.Model):
-    date_added = models.DateTimeField(default=timezone.now)
-    order_num = models.ForeignKey(Order, on_delete=models.CASCADE)
-    material = models.ForeignKey(WeldMat, on_delete=models.CASCADE)
-    mass = models.IntegerField()
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-
-
-class Comments(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    date_added = models.DateTimeField(default=timezone.now)
-    content = models.TextField()
