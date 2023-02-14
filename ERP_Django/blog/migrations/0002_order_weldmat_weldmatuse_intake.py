@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('order_num', models.PositiveBigIntegerField()),
-                ('description', models.TextField()),
+                ('purchaser', models.TextField()),
                 ('deadline', models.DateTimeField(default=django.utils.timezone.now)),
                 ('date_added', models.DateTimeField(default=django.utils.timezone.now)),
                 ('manager',
