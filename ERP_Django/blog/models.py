@@ -4,15 +4,6 @@ from django.urls import reverse
 from django.utils import timezone
 
 
-class Order(models.Model):
-    order_num = models.PositiveBigIntegerField(blank=True, null=True)
-    purchaser = models.CharField(max_length=100, default='Missing')
-    title = models.TextField(default='Order')
-    deadline = models.DateField(default=timezone.now)
-    date_added = models.DateField(default=timezone.now)
-    manager = models.ForeignKey(User, on_delete=models.RESTRICT)
-
-
 class Post(models.Model):
     STATUS_CHOICES = [
         ('AC', 'Active'),
@@ -20,12 +11,19 @@ class Post(models.Model):
         ('PS', 'Postponed'),
         ('HD', 'Hidden'),
     ]
+    order_num = models.PositiveBigIntegerField(blank=True,
+                                               null=True)
     title = models.CharField(max_length=100)
     content = models.TextField()
+    purchaser = models.CharField(max_length=100,
+                                 default='Missing')
     date_posted = models.DateTimeField(default=timezone.now)
-    author = models.ForeignKey(User, on_delete=models.RESTRICT)
-    order_num = models.ForeignKey(Order, on_delete=models.RESTRICT, blank=True, null=True)
-    parent = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True)
+    author = models.ForeignKey(User,
+                               on_delete=models.RESTRICT, default=1)
+    parent = models.ForeignKey('self',
+                               on_delete=models.CASCADE,
+                               blank=True,
+                               null=True)
     status = models.CharField(
         max_length=2,
         choices=STATUS_CHOICES,
@@ -39,27 +37,43 @@ class Post(models.Model):
         return reverse('post-detail', kwargs={'pk': self.pk})
 
 
+class Order(models.Model):
+    order_num = models.ForeignKey(Post,
+                                  on_delete=models.RESTRICT,
+                                  blank=True,
+                                  null=True)
+    deadline = models.DateField(blank=True,
+                                null=True)
+    date_added = models.DateField(default=timezone.now)
+
+
 class Ingress(models.Model):
+    order_num = models.ForeignKey(Order,
+                                  on_delete=models.CASCADE)
     received = models.DateField(default=timezone.now)
-    order_num = models.ForeignKey(Order, on_delete=models.CASCADE)
 
 
 class Control(models.Model):
+    order_num = models.ForeignKey(Order,
+                                  on_delete=models.CASCADE)
     date_in = models.DateField(default=timezone.now)
     is_accepted_in = models.BooleanField()
     date_out = models.DateField(default=timezone.now)
     is_accepted_out = models.BooleanField()
-    order_num = models.ForeignKey(Order, on_delete=models.CASCADE)
 
-class WeldMat(models.Model):
+
+class WeldMaterial(models.Model):
     material = models.TextField()
     mass = models.IntegerField()
     date_changed = models.DateField(default=timezone.now)
 
 
-class WeldMatUse(models.Model):
+class WeldMaterialUse(models.Model):
+    order_num = models.ForeignKey(Order,
+                                  on_delete=models.CASCADE)
     date_added = models.DateField(default=timezone.now)
-    order_num = models.ForeignKey(Order, on_delete=models.CASCADE)
-    material = models.ForeignKey(WeldMat, on_delete=models.CASCADE)
+    material = models.ForeignKey(WeldMaterial,
+                                 on_delete=models.CASCADE)
     mass = models.IntegerField()
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User,
+                             on_delete=models.CASCADE)

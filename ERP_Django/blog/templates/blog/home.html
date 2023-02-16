@@ -8,7 +8,8 @@
             <a class="me-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
             <small class="text-muted">{{ post.date_posted }}</small>
         </div>
-        <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
+        <h1><a class="article-title" href="{% url 'post-detail' post.id %}">З-Н {{ post.order_num }}</a></h1>
+        <h2><a class="article-title" href="{% url 'post-detail' post.id %}">Название: {{ post.title }}</a></h2>
         <p class="article-content">{{ post.content }}</p>
     </div>
 </article>
