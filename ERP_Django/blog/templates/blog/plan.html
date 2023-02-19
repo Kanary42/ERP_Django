@@ -1,0 +1,21 @@
+{% extends "blog/base.html" %}
+{% block content %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">З-Н</th>
+      <th scope="col">Название</th>
+      <th scope="col">Менеджер</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for post in posts %}
+    <tr>
+      <th scope="row"><a class="text" href="{% url 'post-detail' post.id %}">{{ post.id }}</a></th>
+      <td>{{ post.title }}</td>
+      <td>{{ post.author }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock content %}

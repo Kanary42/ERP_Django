@@ -1,4 +1,5 @@
 {% extends "blog/base.html" %}
+{% load comments %}
 {% block content %}
 <article class="d-flex content-section">
     <img class="rounded-circle article-img" src="{{ object.author.profile.image.url }}">
@@ -18,4 +19,5 @@
         <p class="article-content">{{ object.content }}</p>
     </div>
 </article>
+{% render_comment_form for post %}
 {% endblock content %}

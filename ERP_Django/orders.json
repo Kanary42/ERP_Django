@@ -3,416 +3,416 @@
         "purchaser":"SLB",
         "order_num":10033,
         "title":"Лазерное восстановление детали ADN4D-CA V3157 согласно PO YA4907436A",
-        "Серийный номер \n(при наличии)":"V3157 ",
-        "Кол-во шт":1,
-        "Ведущий менеджер":"Савик"
+        "serial_number":"V3157 ",
+        "quantity":1,
+        "manager":"Савик"
     },
     {
         "purchaser":"SLB",
         "order_num":10161,
         "title":"Лазерное восстановление детали ADN4D-CA V3983 согласно PO YA4814014A",
-        "Серийный номер \n(при наличии)":"V3983 ",
-        "Кол-во шт":1,
-        "Ведущий менеджер":"Савик"
+        "serial_number":"V3983 ",
+        "quantity":1,
+        "manager":"Савик"
     },
     {
         "purchaser":"SLB",
         "order_num":10162,
         "title":"Лазерное восстановление детали ADN4D-CA G5586 согласно PO YA4908388A",
-        "Серийный номер \n(при наличии)":"G5586 ",
-        "Кол-во шт":1,
-        "Ведущий менеджер":"Савик"
+        "serial_number":"G5586 ",
+        "quantity":1,
+        "manager":"Савик"
     },
     {
         "purchaser":"SLB",
         "order_num":10163,
         "title":"Изготовление 100005417 WEAR SLEEVE ARC 5",
-        "Серийный номер \n(при наличии)":100005417,
-        "Кол-во шт":5,
-        "Ведущий менеджер":"Савик"
+        "serial_number":100005417,
+        "quantity":5,
+        "manager":"Савик"
     },
     {
         "purchaser":"SLB",
         "order_num":10034,
         "title":"Изготовление 3шт. 100491747 WEAR BAND INCONEL UPPER MXW475 FOR USED COLLAR (Manufacturing, Machining only, w\/o material)",
-        "Серийный номер \n(при наличии)":100491747,
-        "Кол-во шт":3,
-        "Ведущий менеджер":"Савик"
+        "serial_number":100491747,
+        "quantity":3,
+        "manager":"Савик"
     },
     {
         "purchaser":"SLB",
         "order_num":10036,
-        "title":"Ремонт упорного торца PD4SRC-BA\/DA 57399432+\nНаплавка карбида на  упорный торец PD4SRC-BA\/DA sn 57399432 ",
-        "Серийный номер \n(при наличии)":57399432,
-        "Кол-во шт":1,
-        "Ведущий менеджер":"Савик"
+        "title":"Ремонт упорного торца PD4SRC-BA\/DA 57399432+\nНаплавка карбида на упорный торец PD4SRC-BA\/DA sn 57399432 ",
+        "serial_number":57399432,
+        "quantity":1,
+        "manager":"Савик"
     },
     {
         "purchaser":"SLB",
         "order_num":10037,
         "title":"Редресс лопастей PD475CC 2шт 2100040-01 и 2102818-01 от Жушкова",
-        "Серийный номер \n(при наличии)":"2100040-01 \/ 2102818-01",
-        "Кол-во шт":2,
-        "Ведущий менеджер":"Савик"
+        "serial_number":"2100040-01 \/ 2102818-01",
+        "quantity":2,
+        "manager":"Савик"
     },
     {
         "purchaser":"SLB",
         "order_num":10164,
         "title":"Редресс лопастей PD475CC-RA 5 7\/8 INCH COLLAR ASSEMBLY PD475CC (Repair, IBS redress, w\/ laser carb) 2020146-03",
-        "Серийный номер \n(при наличии)":"2020146-03",
-        "Кол-во шт":1,
-        "Ведущий менеджер":"Савик"
+        "serial_number":"2020146-03",
+        "quantity":1,
+        "manager":"Савик"
     },
     {
         "purchaser":"SLB",
         "order_num":10038,
         "title":"PD4SRC-BA\/DA COLLAR PD475 S-HOP RX (Repair, Shoulder, w\/ laser) \nAdditional Information:Part Number: PD4SRCBA Serial Number: 2207058-01",
-        "Серийный номер \n(при наличии)":"2207058-01",
-        "Кол-во шт":1,
-        "Ведущий менеджер":"Савик"
+        "serial_number":"2207058-01",
+        "quantity":1,
+        "manager":"Савик"
     },
     {
         "purchaser":"SLB",
         "order_num":"10039",
         "title":"PD475CC-AB\/AC\/JA  (Repair, Shoulder, w\/ laser) \nAdditional Information:Serial Number: 2005386-01",
-        "Серийный номер \n(при наличии)":"2005386-01",
-        "Кол-во шт":1,
-        "Ведущий менеджер":"Савик"
+        "serial_number":"2005386-01",
+        "quantity":1,
+        "manager":"Савик"
     },
     {
         "purchaser":"SLB",
         "order_num":9410,
         "title":"Наплавка карбида на восстановленный упорный торец PD4SRC-BA\/DA COLLAR PD475 S-HOP RX sn 2112493-01",
-        "Серийный номер \n(при наличии)":"2112493-01",
-        "Кол-во шт":1,
-        "Ведущий менеджер":"Савик"
+        "serial_number":"2112493-01",
+        "quantity":1,
+        "manager":"Савик"
     },
     {
         "purchaser":"SLB",
         "order_num":10165,
         "title":"DV6MS-BB, DV6M 8_1-4 STABILIZER ASSY (Manufacturing) #5",
-        "Серийный номер \n(при наличии)":"IRS0005",
-        "Кол-во шт":1,
-        "Ведущий менеджер":"Савик"
+        "serial_number":"IRS0005",
+        "quantity":1,
+        "manager":"Савик"
     },
     {
         "purchaser":"SLB",
         "order_num":10166,
         "title":"DV6MS-BB, DV6M 8_1-4 STABILIZER ASSY (Manufacturing) #6",
-        "Серийный номер \n(при наличии)":"IRS0006",
-        "Кол-во шт":1,
-        "Ведущий менеджер":"Савик"
+        "serial_number":"IRS0006",
+        "quantity":1,
+        "manager":"Савик"
     },
     {
         "purchaser":"Weatherford",
         "order_num":"10167",
         "title":"Аттестационная работа",
-        "Серийный номер \n(при наличии)":"-",
-        "Кол-во шт":1,
-        "Ведущий менеджер":"Заруба"
+        "serial_number":"-",
+        "quantity":1,
+        "manager":"Заруба"
     },
     {
         "purchaser":"Бейкер Хьюз АО",
         "order_num":"10057",
         "title":"BODY_STABILIZER_0675CCN",
-        "Серийный номер \n(при наличии)":10154374,
-        "Кол-во шт":2,
-        "Ведущий менеджер":"Янюк"
+        "serial_number":10154374,
+        "quantity":2,
+        "manager":"Янюк"
     },
     {
         "purchaser":"Бейкер Хьюз АО",
         "order_num":"10059",
         "title":"BODY_STABILIZER_0675CCN",
-        "Серийный номер \n(при наличии)":10154374,
-        "Кол-во шт":1,
-        "Ведущий менеджер":"Янюк"
+        "serial_number":10154374,
+        "quantity":1,
+        "manager":"Янюк"
     },
     {
         "purchaser":"Baker Hughes",
         "order_num":"10029",
         "title":"10176945 CARTRIDGE,PROTECTION,30KSI,6.75BCPM ",
-        "Серийный номер \n(при наличии)":"B24J01003\nB21G80504\nB25D90906\nB09K00602\nB18D90102\nB21G80502\nB29D90404\nB09K00307\nB29D90503",
-        "Кол-во шт":9,
-        "Ведущий менеджер":"Заруба"
+        "serial_number":"B24J01003\nB21G80504\nB25D90906\nB09K00602\nB18D90102\nB21G80502\nB29D90404\nB09K00307\nB29D90503",
+        "quantity":9,
+        "manager":"Заруба"
     },
     {
         "purchaser":"Baker Hughes",
         "order_num":"10030",
         "title":"10172583 CARTRIDGE,FLOW-STRAIGHTENER,T3,4.75BCPM  ",
-        "Серийный номер \n(при наличии)":"B25J90405\nB13K60602\nB02D90805\nB02090804\nB16A80101\nB31C71501\nB12L00307\nB02D90101",
-        "Кол-во шт":8,
-        "Ведущий менеджер":"Заруба"
+        "serial_number":"B25J90405\nB13K60602\nB02D90805\nB02090804\nB16A80101\nB31C71501\nB12L00307\nB02D90101",
+        "quantity":8,
+        "manager":"Заруба"
     },
     {
         "purchaser":"Baker Hughes",
         "order_num":"10032",
         "title":"10138203   CARTRIDGE,FLOW OUTLET,6.75BCPM",
-        "Серийный номер \n(при наличии)":"B21H90201\nB16E81803",
-        "Кол-во шт":2,
-        "Ведущий менеджер":"Заруба"
+        "serial_number":"B21H90201\nB16E81803",
+        "quantity":2,
+        "manager":"Заруба"
     },
     {
         "purchaser":"Baker Hughes",
         "order_num":"10035",
         "title":"10138202 CARTRIDGE,FLOW INLET,6.75BCPM2",
-        "Серийный номер \n(при наличии)":"B23000135",
-        "Кол-во шт":1,
-        "Ведущий менеджер":"Заруба"
+        "serial_number":"B23000135",
+        "quantity":1,
+        "manager":"Заруба"
     },
     {
         "purchaser":"Baker Hughes",
         "order_num":"10026",
         "title":"10172583 CARTRIDGE,FLOW-STRAIGHTENER,T3,4.75BCPM ",
-        "Серийный номер \n(при наличии)":"B22A90304",
-        "Кол-во шт":1,
-        "Ведущий менеджер":"Заруба"
+        "serial_number":"B22A90304",
+        "quantity":1,
+        "manager":"Заруба"
     },
     {
         "purchaser":"BAKER HUGHES",
         "order_num":"9600",
         "title":"10176945 CARTRIDGE,PROTECTION,30KSI,6.75BCPM",
-        "Серийный номер \n(при наличии)":"B09K00207\nB28H90901",
-        "Кол-во шт":2,
-        "Ведущий менеджер":"Заруба"
+        "serial_number":"B09K00207\nB28H90901",
+        "quantity":2,
+        "manager":"Заруба"
     },
     {
         "purchaser":"BAKER HUGHES",
         "order_num":9745,
         "title":"10199899 FLOW DIVERTER,INCONEL 718,4.75 AZI OTK   S\/N 14745836",
-        "Серийный номер \n(при наличии)":14745836,
-        "Кол-во шт":1,
-        "Ведущий менеджер":"Заруба"
+        "serial_number":14745836,
+        "quantity":1,
+        "manager":"Заруба"
     },
     {
         "purchaser":"BAKER HUGHES",
         "order_num":"9213",
         "title":"FLUID DISPLACER,ASY,OD8.19,V2.8,6.75ORD2",
-        "Серийный номер \n(при наличии)":14894661,
-        "Кол-во шт":1,
-        "Ведущий менеджер":"Заруба"
+        "serial_number":14894661,
+        "quantity":1,
+        "manager":"Заруба"
     },
     {
         "purchaser":"БЕНТЕК",
         "order_num":"9893",
         "title":"Ремонт вала СВП TD500 (3)",
-        "Серийный номер \n(при наличии)":"№231443-04",
-        "Кол-во шт":1,
-        "Ведущий менеджер":"Браславский"
+        "serial_number":"№231443-04",
+        "quantity":1,
+        "manager":"Браславский"
     },
     {
         "purchaser":"БЕНТЕК",
         "order_num":"10126",
         "title":"Главный вал СВП TD500 (1)",
-        "Серийный номер \n(при наличии)":"224630-01",
-        "Кол-во шт":1,
-        "Ведущий менеджер":"Браславский"
+        "serial_number":"224630-01",
+        "quantity":1,
+        "manager":"Браславский"
     },
     {
         "purchaser":"БЕНТЕК",
         "order_num":"9510",
         "title":"Вал СВП TD500 (4)",
-        "Серийный номер \n(при наличии)":"191044-1",
-        "Кол-во шт":1,
-        "Ведущий менеджер":"Заруба"
+        "serial_number":"191044-1",
+        "quantity":1,
+        "manager":"Заруба"
     },
     {
         "purchaser":"ОЙЛ ЛИНК",
         "order_num":"9940",
         "title":"Вал СВП TD500 (2)",
-        "Серийный номер \n(при наличии)":"176178-2",
-        "Кол-во шт":1,
-        "Ведущий менеджер":"Янюк"
+        "serial_number":"176178-2",
+        "quantity":1,
+        "manager":"Янюк"
     },
     {
         "purchaser":"Башнефтегеофизика",
         "order_num":"10105",
         "title":" Резистивиметр APS 4 3\/4\" ",
-        "Серийный номер \n(при наличии)":504,
-        "Кол-во шт":1,
-        "Ведущий менеджер":"Заруба"
+        "serial_number":504,
+        "quantity":1,
+        "manager":"Заруба"
     },
     {
         "purchaser":"КОМЕК",
         "order_num":"10147",
         "title":"Настройка ТНВД 155-5",
-        "Серийный номер \n(при наличии)":"SN -6211-72-1230",
-        "Кол-во шт":1,
-        "Ведущий менеджер":"Янюк"
+        "serial_number":"SN -6211-72-1230",
+        "quantity":1,
+        "manager":"Янюк"
     },
     {
         "purchaser":"Технологии ОФС",
         "order_num":10288,
         "title":"RING_RUBBER-CLAMPING_F-CVA_TI_BCPM (подряд Семен)",
-        "Серийный номер \n(при наличии)":"нет",
-        "Кол-во шт":22,
-        "Ведущий менеджер":"Янюк"
+        "serial_number":"нет",
+        "quantity":22,
+        "manager":"Янюк"
     },
     {
         "purchaser":"Schlumberger",
         "order_num":"9537",
         "title":"Ремонт BODY s\/n 9A1804-2-4R",
-        "Серийный номер \n(при наличии)":"9A1804-2-4R",
-        "Кол-во шт":1,
-        "Ведущий менеджер":"Савик"
+        "serial_number":"9A1804-2-4R",
+        "quantity":1,
+        "manager":"Савик"
     },
     {
         "purchaser":"Halliburton \/ БурСервис",
         "order_num":"9603",
         "title":"Антиповоротный корпус 5200 (Тестовый ремонт детали)\nРемонт хаузинга",
-        "Серийный номер \n(при наличии)":" ",
-        "Кол-во шт":1,
-        "Ведущий менеджер":"Савик"
+        "serial_number":" ",
+        "quantity":1,
+        "manager":"Савик"
     },
     {
         "purchaser":"BAKER HUGHES",
         "order_num":"10059",
         "title":"BODY_STABILIZER_0675CCN",
-        "Серийный номер \n(при наличии)":10154374,
-        "Кол-во шт":1,
-        "Ведущий менеджер":"Янюк"
+        "serial_number":10154374,
+        "quantity":1,
+        "manager":"Янюк"
     },
     {
         "purchaser":"BAKER HUGHES",
         "order_num":"10057",
         "title":"BODY_STABILIZER_0675CCN",
-        "Серийный номер \n(при наличии)":10154374,
-        "Кол-во шт":2,
-        "Ведущий менеджер":"Янюк"
+        "serial_number":10154374,
+        "quantity":2,
+        "manager":"Янюк"
     },
     {
         "purchaser":"BAKER HUGHES",
         "order_num":"9600",
         "title":"10176945 CARTRIDGE,PROTECTION,30KSI,6.75BCPM",
-        "Серийный номер \n(при наличии)":"указаны в ПРОДЖЕКТО",
-        "Кол-во шт":2,
-        "Ведущий менеджер":"Заруба"
+        "serial_number":"указаны в ПРОДЖЕКТО",
+        "quantity":2,
+        "manager":"Заруба"
     },
     {
         "purchaser":"BAKER HUGHES",
         "order_num":"9213",
         "title":"FLUID DISPLACER,ASY,OD8.19,V2.8,6.75ORD2",
-        "Серийный номер \n(при наличии)":14894661,
-        "Кол-во шт":1,
-        "Ведущий менеджер":"Заруба"
+        "serial_number":14894661,
+        "quantity":1,
+        "manager":"Заруба"
     },
     {
         "purchaser":"BAKER HUGHES",
         "order_num":"8916",
         "title":"10060248 BODY, STABILIZER, CDP THREADS,6.75ATK2 РО 4511937795",
-        "Серийный номер \n(при наличии)":15193970,
-        "Кол-во шт":1,
-        "Ведущий менеджер":"Заруба"
+        "serial_number":15193970,
+        "quantity":1,
+        "manager":"Заруба"
     },
     {
         "purchaser":"БЕНТЕК",
         "order_num":"9510",
         "title":"Вал СВП TD500",
-        "Серийный номер \n(при наличии)":"191044-1",
-        "Кол-во шт":1,
-        "Ведущий менеджер":"Заруба"
+        "serial_number":"191044-1",
+        "quantity":1,
+        "manager":"Заруба"
     },
     {
         "purchaser":"ОЙЛ ЛИНК",
         "order_num":"9528",
         "title":"Вал СВП TD500",
-        "Серийный номер \n(при наличии)":"189550-5",
-        "Кол-во шт":1,
-        "Ведущий менеджер":"Заруба"
+        "serial_number":"189550-5",
+        "quantity":1,
+        "manager":"Заруба"
     },
     {
         "purchaser":"Реман-Сервис",
         "order_num":"9289",
         "title":"Изготовление прокладок",
-        "Серийный номер \n(при наличии)":" Rocker Lever Housing Gasket – 3630839",
-        "Кол-во шт":82,
-        "Ведущий менеджер":"Браславский"
+        "serial_number":" Rocker Lever Housing Gasket – 3630839",
+        "quantity":82,
+        "manager":"Браславский"
     },
     {
         "purchaser":"ЕГК",
         "order_num":"9866",
         "title":"Шлифовка Передняя втулка штока",
-        "Серийный номер \n(при наличии)":"152 715 08",
-        "Кол-во шт":1,
-        "Ведущий менеджер":"Наливайко"
+        "serial_number":"152 715 08",
+        "quantity":1,
+        "manager":"Наливайко"
     },
     {
         "purchaser":"БЕНТЕК",
         "order_num":"9893",
         "title":"Ремонт вала СВП TD500",
-        "Серийный номер \n(при наличии)":"№231443-04",
-        "Кол-во шт":1,
-        "Ведущий менеджер":"Браславский"
+        "serial_number":"№231443-04",
+        "quantity":1,
+        "manager":"Браславский"
     },
     {
         "purchaser":"ОЙЛ ЛИНК",
         "order_num":"9940",
         "title":"Ремонт вала СВП TD500",
-        "Серийный номер \n(при наличии)":"176178-2",
-        "Кол-во шт":1,
-        "Ведущий менеджер":"Заруба"
+        "serial_number":"176178-2",
+        "quantity":1,
+        "manager":"Заруба"
     },
     {
         "purchaser":"Baker Hughes",
         "order_num":"9778",
         "title":"10172583 CARTRIDGE,FLOW-STRAIGHTENER,T3,4.75BCPM ",
-        "Серийный номер \n(при наличии)":"ПРИМЕЧАНИЕ",
-        "Кол-во шт":3,
-        "Ведущий менеджер":"Заруба"
+        "serial_number":"ПРИМЕЧАНИЕ",
+        "quantity":3,
+        "manager":"Заруба"
     },
     {
         "purchaser":"Baker Hughes",
         "order_num":"10026",
         "title":"10172583 CARTRIDGE,FLOW-STRAIGHTENER,T3,4.75BCPM ",
-        "Серийный номер \n(при наличии)":"B22A90304",
-        "Кол-во шт":1,
-        "Ведущий менеджер":"Заруба"
+        "serial_number":"B22A90304",
+        "quantity":1,
+        "manager":"Заруба"
     },
     {
         "purchaser":"Башнефтегеофизика",
         "order_num":"10105",
         "title":" Резистивиметр APS 4 3\/4\" ",
-        "Серийный номер \n(при наличии)":504,
-        "Кол-во шт":1,
-        "Ведущий менеджер":"Заруба"
+        "serial_number":504,
+        "quantity":1,
+        "manager":"Заруба"
     },
     {
         "purchaser":"Башнефтегеофизика",
         "order_num":"10211",
         "title":" Резистивиметр APS 4 3\/4\" ",
-        "Серийный номер \n(при наличии)":607,
-        "Кол-во шт":1,
-        "Ведущий менеджер":"Заруба"
+        "serial_number":607,
+        "quantity":1,
+        "manager":"Заруба"
     },
     {
         "purchaser":"ЕГК",
         "order_num":"10125",
         "title":"Втулка вращателя сандвик",
-        "Серийный номер \n(при наличии)":15233108,
-        "Кол-во шт":1,
-        "Ведущий менеджер":"Браславский"
+        "serial_number":15233108,
+        "quantity":1,
+        "manager":"Браславский"
     },
     {
         "purchaser":"БЕНТЕК",
         "order_num":"10126",
         "title":"Главный вал СВП TD500",
-        "Серийный номер \n(при наличии)":"224630-01",
-        "Кол-во шт":1,
-        "Ведущий менеджер":"Браславский"
+        "serial_number":"224630-01",
+        "quantity":1,
+        "manager":"Браславский"
     },
     {
         "purchaser":"Комек",
         "order_num":"10147",
         "title":"Настройка ТНВД 155-5",
-        "Серийный номер \n(при наличии)":"SN -6211-72-1230",
-        "Кол-во шт":1,
-        "Ведущий менеджер":"Янюк"
+        "serial_number":"SN -6211-72-1230",
+        "quantity":1,
+        "manager":"Янюк"
     },
     {
         "purchaser":"SLB",
         "order_num":"10156",
         "title":"Восстановительный ремонт PRESSURE CASE ASSEMBLY, \nPD475 S-HOP RX EQ-T1052717 согласно РО YA4814458A",
-        "Серийный номер \n(при наличии)":"S\/N: 180165-2-2, S\/N: 185255-1-4\/5, S\/N: 193304-1-1\/5 , S\/N: 184121-1-2\/5 ",
-        "Кол-во шт":4,
-        "Ведущий менеджер":"Янюк"
+        "serial_number":"S\/N: 180165-2-2, S\/N: 185255-1-4\/5, S\/N: 193304-1-1\/5 , S\/N: 184121-1-2\/5 ",
+        "quantity":4,
+        "manager":"Янюк"
     }
 ]
