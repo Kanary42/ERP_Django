@@ -71,6 +71,19 @@ class LaserWeldingParameters(models.Model):
                                           decimal_places=1)
 
 
+class Worksite(models.Model):
+    SITE_CHOICES = [(1, 'LK1'),
+                    (2, 'LK2'),
+                    (3, 'LK3'),
+                    (4, 'Welding'),
+                    (5, 'Fitting'),
+                    (6, 'TS1620'),
+                    (7, 'FC'),
+                    (8, 'RT')]
+    site = models.CharField(max_length=1,
+                            choices=SITE_CHOICES)
+
+
 class Post(models.Model):
     STATUS_CHOICES = [
             ('AC', 'Active'),
@@ -168,6 +181,10 @@ class TechCard(models.Model):
     date_created = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User,
                                on_delete=models.RESTRICT)
+    laser_parameters = models.ForeignKey(LaserWeldingParameters,
+                                         on_delete=models.RESTRICT,
+                                         blank=True,
+                                         null=True)
 
 
 class TechCardOperations(models.Model):
@@ -178,3 +195,43 @@ class TechCardOperations(models.Model):
     content = models.TextField()
     instrument = models.ForeignKey(Instrument,
                                    on_delete=models.RESTRICT)
+
+
+class DayTaskSheet(models.Model):
+    date = models.DateField(default=timezone.now)
+    SHOP_CHOICES = [(1, 'Laser'),
+                    (2, 'Mechanical')]
+    shop = models.IntegerField(choices=SHOP_CHOICES)
+    shop_master = models.ForeignKey(User,
+                                    on_delete=models.RESTRICT)
+
+    class Meta:
+        unique_together = ['date', 'shop']
+
+    def __str__(self):
+        return self.date
+
+    def get_absolute_url(self):
+        return reverse('daytasksheet-detail', kwargs={'pk': self.pk})
+
+
+class DayTask(models.Model):
+    sheet = models.ForeignKey(DayTaskSheet,
+                              on_delete=models.RESTRICT)
+    SITE_CHOICES = [(1, 'LK1'),
+                    (2, 'LK2'),
+                    (3, 'LK3'),
+                    (4, 'Welding'),
+                    (5, 'Fitting'),
+                    (6, 'TS1620'),
+                    (7, 'FC'),
+                    (8, 'RT')]
+    site = models.CharField(max_length=1,
+                            choices=SITE_CHOICES)
+    worker = models.ForeignKey(User,
+                               on_delete=models.RESTRICT)
+    serial_number = models.ForeignKey(SerialNumber,
+                                      on_delete=models.RESTRICT)
+    operation = models.ForeignKey(TechCard,
+                                  on_delete=models.RESTRICT)
+    time = models.PositiveSmallIntegerField()

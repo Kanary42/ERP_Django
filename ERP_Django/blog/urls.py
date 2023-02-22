@@ -7,7 +7,11 @@ from .views import (PostListView,
                     PostUpdateView,
                     PostDeleteView,
                     UserPostListView,
-                    PlanView)
+                    PlanView,
+                    DayTaskSheetCreateView,
+                    DayTaskSheetDetailView,
+                    DayTaskSheetListView,
+                    DayTaskCreateView)
 
 urlpatterns = [
     path('', PostListView.as_view(), name='blog-home'),
@@ -17,5 +21,9 @@ urlpatterns = [
     path('post/new/', PostCreateView.as_view(), name='post-create'),
     path('post/<int:pk>/update/', PostUpdateView.as_view(), name='post-update'),
     path('post/<int:pk>/delete/', PostDeleteView.as_view(), name='post-delete'),
+    path('daytasksheet/new/', DayTaskSheetCreateView.as_view(), name='daytasksheet-create'),
+    path('daytasksheet/<int:pk>/', DayTaskSheetDetailView.as_view(), name='daytasksheet-detail'),
+    path('daytasksheet/<int:sheet_id>/daytask/new', DayTaskCreateView.as_view(), name='daytask-create'),
+    path('daytasksheet_list/', DayTaskSheetListView.as_view(), name='daytasksheet-list'),
     path('about/', views.about, name='blog-about'),
 ]
