@@ -10,11 +10,15 @@
   </thead>
   <tbody>
   {% for post in posts %}
+  {% for order in orders %}
+  {% if order.post_id == post.id %}
     <tr>
-      <th scope="row"><a class="text" href="{% url 'post-detail' post.id %}">{{ post.id }}</a></th>
+      <th scope="row"><a class="text" href="{% url 'post-detail' post.id %}">{{ order.order_number }}</a></th>
       <td>{{ post.title }}</td>
       <td>{{ post.author }}</td>
     </tr>
+  {% endif %}
+  {% endfor %}
   {% endfor %}
   </tbody>
 </table>

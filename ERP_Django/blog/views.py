@@ -1,5 +1,6 @@
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import (ListView,
                                   DetailView,
@@ -7,14 +8,28 @@ from django.views.generic import (ListView,
                                   UpdateView,
                                   DeleteView)
 
-from .models import Post, DayTaskSheet, DayTask
+from .models import Post, DayTaskSheet, DayTask, Order
+from .forms import DayTaskForm
+from django.contrib import messages
+from django.shortcuts import render, redirect
 
 
-def home(request):
-    context = {
-            'posts': Post.objects.all()
-            }
-    return render(request, 'blog/home.html', context)
+# def home(request):
+#     context = {
+#             'posts': Post.objects.all(),
+#             'orders': Order.objects.all(),
+#             }
+#     return render(request, 'blog/home.html', context)
+
+class HomeView(ListView):
+    model = Post
+    template_name = 'blog/home.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['posts'] = Post.objects.all()
+        context['orders'] = Order.objects.all()
+        return context
 
 
 class PostListView(ListView):
@@ -84,6 +99,7 @@ class PlanView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['posts'] = Post.objects.all()
+        context['orders'] = Order.objects.all()
         return context
 
 
@@ -108,6 +124,10 @@ class DayTaskCreateView(LoginRequiredMixin, CreateView):
 class DayTaskSheetDetailView(DetailView):
     model = DayTaskSheet
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['daytasks'] = DayTask.objects.filter(sheet__id=context['object'].pk)
+        return context
 
 class DayTaskSheetListView(ListView):
     model = DayTaskSheet
@@ -116,11 +136,20 @@ class DayTaskSheetListView(ListView):
     ordering = ['-date']
     paginate_by = 50
 
-# def DayTaskView(request):
-#     mobiles = DayTaskSheet.objects.all()
-#     laptops = DayTask.objects.all()
-#     context = {
-#             'mobiles': mobiles,
-#             'laptops': laptops
-#             }
-#     return render(request, 'daytasksheet.html', context)
+
+@login_required
+def daytask(request, sheet_id):
+    if request.method == 'POST':
+        dt_form = DayTaskForm(request.POST)
+        if dt_form.is_valid():
+            dt = dt_form.save(commit=False)
+            dt.sheet_id = sheet_id
+            dt.save()
+            messages.success(request, f'Account has been updated')
+            return redirect('daytasksheet-detail', sheet_id)
+    else:
+        dts_form = DayTaskForm(instance=request.user)
+    context = {
+        'dts_form': dts_form,
+    }
+    return render(request, 'blog/daytask_form.html', context)

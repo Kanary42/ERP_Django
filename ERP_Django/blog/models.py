@@ -121,6 +121,9 @@ class Order(models.Model):
     deadline = models.DateField()
     date_added = models.DateField(default=timezone.now)
 
+    def __str__(self):
+        return str(self.order_number)
+
 
 class SerialNumber(models.Model):
     order_number = models.ForeignKey(Order,
@@ -128,6 +131,9 @@ class SerialNumber(models.Model):
     serial_number = models.CharField(max_length=100,
                                      default='Missing')
     together = models.BooleanField(default=True)
+
+    def __str__(self):
+        return str(self.serial_number)
 
 
 class Ingress(models.Model):
@@ -194,7 +200,9 @@ class TechCardOperations(models.Model):
     name = models.CharField(max_length=100)
     content = models.TextField()
     instrument = models.ForeignKey(Instrument,
-                                   on_delete=models.RESTRICT)
+                                   on_delete=models.RESTRICT,
+                                   blank=True,
+                                   null=True)
 
 
 class DayTaskSheet(models.Model):
@@ -209,7 +217,7 @@ class DayTaskSheet(models.Model):
         unique_together = ['date', 'shop']
 
     def __str__(self):
-        return self.date
+        return str(self.date) + str(self.SHOP_CHOICES[self.shop - 1])
 
     def get_absolute_url(self):
         return reverse('daytasksheet-detail', kwargs={'pk': self.pk})
@@ -226,8 +234,7 @@ class DayTask(models.Model):
                     (6, 'TS1620'),
                     (7, 'FC'),
                     (8, 'RT')]
-    site = models.CharField(max_length=1,
-                            choices=SITE_CHOICES)
+    site = models.IntegerField(choices=SITE_CHOICES)
     worker = models.ForeignKey(User,
                                on_delete=models.RESTRICT)
     serial_number = models.ForeignKey(SerialNumber,

@@ -8,8 +8,7 @@
             <a class="me-2" href="{% url 'user-posts' daytasksheet.shop_master.username %}">{{ daytasksheet.shop_master }}</a>
             <small class="text-muted">{{ post.date_posted }}</small>
         </div>
-        <h1><a class="article-title" href="{% url 'daytasksheet-detail' daytasksheet.id %}">Date: {{ daytasksheet.date }}</a></h1>
-        <h2><a class="article-title" href="{% url 'daytasksheet-detail' daytasksheet.id %}">Shop: {{ daytasksheet.get_shop_display }}</a></h2>
+        <h6><a class="article-title" href="{% url 'daytasksheet-detail' daytasksheet.id %}">Date: {{ daytasksheet.date }}, Shop: {{ daytasksheet.get_shop_display }}</a></h6>
     </div>
 </article>
 {% endfor %}
