@@ -10,7 +10,8 @@ from .models import (Post,
                      TechCard,
                      TechCardOperations,
                      DayTask,
-                     DayTaskSheet)
+                     DayTaskSheet,
+                     ControlInput)
 
 admin.site.register(Post)
 admin.site.register(WeldMaterial)
@@ -23,3 +24,4 @@ admin.site.register(TechCard)
 admin.site.register(TechCardOperations)
 admin.site.register(DayTask)
 admin.site.register(DayTaskSheet)
+admin.site.register(ControlInput)

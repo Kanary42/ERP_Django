@@ -4,21 +4,28 @@
   <thead>
     <tr>
       <th scope="col">З-Н</th>
+      <th scope="col">SN</th>
       <th scope="col">Название</th>
       <th scope="col">Менеджер</th>
     </tr>
   </thead>
   <tbody>
   {% for post in posts %}
-  {% for order in orders %}
-  {% if order.post_id == post.id %}
     <tr>
-      <th scope="row"><a class="text" href="{% url 'post-detail' post.id %}">{{ order.order_number }}</a></th>
+      {% for entry in post.order_set.all %}
+        <td scope="row"><a class="text" href="{% url 'post-detail' post.id %}">{{entry.order_number}}</a></td>
+
+          {% endfor %}
+
+
+      {% for entry in post.order_set.all %}
+                  {% for a in entry.serialnumber_set.all %}
+                <td>{{a.serial_number}}</td>
+        {% endfor %}
+          {% endfor %}
       <td>{{ post.title }}</td>
       <td>{{ post.author }}</td>
     </tr>
-  {% endif %}
-  {% endfor %}
   {% endfor %}
   </tbody>
 </table>

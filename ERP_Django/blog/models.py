@@ -7,7 +7,7 @@ import os
 
 def content_file_name(instance, filename):
     ext = filename.split('.')[-1]
-    filename = "%s_%s_%s.%s" % (instance.order_num, instance.serial_num, instance.id, ext)
+    filename = "%s_%s.%s" % (instance.serial_num, instance.id, ext)
     return os.path.join('instance.model._meta', filename)
 
 
@@ -147,7 +147,7 @@ class ControlInput(models.Model):
                                       on_delete=models.CASCADE)
     date_in = models.DateField(default=timezone.now)
     is_accepted_in = models.BooleanField()
-    in_file = models.FileField(upload_to=content_file_name)
+    in_file = models.FileField(upload_to='ControlInput/')
 
 
 class ControlOutput(models.Model):

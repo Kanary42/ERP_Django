@@ -8,10 +8,12 @@ from django.views.generic import (ListView,
                                   UpdateView,
                                   DeleteView)
 
-from .models import Post, DayTaskSheet, DayTask, Order
+from .models import Post, DayTaskSheet, DayTask, Order, SerialNumber, ControlInput
 from .forms import DayTaskForm
 from django.contrib import messages
 from django.shortcuts import render, redirect
+from django.db.models import Prefetch
+from django.db import connection
 
 
 # def home(request):
@@ -98,8 +100,20 @@ class PlanView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['posts'] = Post.objects.all()
-        context['orders'] = Order.objects.all()
+        # orders = Prefetch('post__order_set',
+        #
+        #                   to_attr='orders')
+        # serial_numbers = Prefetch('order_set__serialnumber_set',
+        #
+        #                           to_attr='serialnumbers')
+        # context['posts'] = Post.objects.prefetch_related('order_set', serial_numbers)
+        context['posts'] = Post.objects.prefetch_related('order_set__serialnumber_set')
+        # context['posts'] = Post.objects.select_related()
+        # context['orders'] = Order.objects.filter(order__post_id==post__id)
+        # context['serial_numbers'] = SerialNumber.objects.all()
+        # context['control_inputs'] = ControlInput.objects.all()
+        print(context['posts'].query)
+        print(connection.queries)
         return context
 
 
@@ -129,6 +143,7 @@ class DayTaskSheetDetailView(DetailView):
         context['daytasks'] = DayTask.objects.filter(sheet__id=context['object'].pk)
         return context
 
+
 class DayTaskSheetListView(ListView):
     model = DayTaskSheet
     template_name = 'blog/daytasksheet_list.html'
@@ -150,6 +165,6 @@ def daytask(request, sheet_id):
     else:
         dts_form = DayTaskForm(instance=request.user)
     context = {
-        'dts_form': dts_form,
-    }
+            'dts_form': dts_form,
+            }
     return render(request, 'blog/daytask_form.html', context)
