@@ -100,20 +100,7 @@ class PlanView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        # orders = Prefetch('post__order_set',
-        #
-        #                   to_attr='orders')
-        # serial_numbers = Prefetch('order_set__serialnumber_set',
-        #
-        #                           to_attr='serialnumbers')
-        # context['posts'] = Post.objects.prefetch_related('order_set', serial_numbers)
-        context['posts'] = Post.objects.prefetch_related('order_set__serialnumber_set')
-        # context['posts'] = Post.objects.select_related()
-        # context['orders'] = Order.objects.filter(order__post_id==post__id)
-        # context['serial_numbers'] = SerialNumber.objects.all()
-        # context['control_inputs'] = ControlInput.objects.all()
-        print(context['posts'].query)
-        print(connection.queries)
+        context['posts'] = Post.objects.prefetch_related('order_set','order_set__serialnumber_set')
         return context
 
 

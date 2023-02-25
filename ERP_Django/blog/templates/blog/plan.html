@@ -1,30 +1,43 @@
 {% extends "blog/base.html" %}
 {% block content %}
-<table class="table">
+<table class="table table-striped table-hover">
   <thead>
     <tr>
+      <th scope="col">Название</th>
       <th scope="col">З-Н</th>
       <th scope="col">SN</th>
-      <th scope="col">Название</th>
       <th scope="col">Менеджер</th>
+      <th scope="col">Входной контроль</th>
     </tr>
   </thead>
   <tbody>
   {% for post in posts %}
     <tr>
-      {% for entry in post.order_set.all %}
-        <td scope="row"><a class="text" href="{% url 'post-detail' post.id %}">{{entry.order_number}}</a></td>
-
+      <td>
+          <a class="text" href="{% url 'post-detail' post.id %}">{{ post.title }}</a>
+      </td>
+      <td scope="row">
+          {% for order in post.order_set.all %}
+            {{order.order_number}}<br>
           {% endfor %}
-
-
-      {% for entry in post.order_set.all %}
-                  {% for a in entry.serialnumber_set.all %}
-                <td>{{a.serial_number}}</td>
-        {% endfor %}
+      </td>
+      <td>
+          {% for order in post.order_set.all %}
+            {% for serial in order.serialnumber_set.all %}
+                {{serial.serial_number}}<br>
+            {% endfor %}
           {% endfor %}
-      <td>{{ post.title }}</td>
+      </td>
       <td>{{ post.author }}</td>
+      <td>
+          {% for order in post.order_set.all %}
+            {% for serial in order.serialnumber_set.all %}
+                {% for input in serial.controlinput_set.all %}
+                    <a href="{{ input.in_file.url }}">{{input.date_in}}</a>
+                {% endfor %}
+             {% endfor %}
+          {% endfor %}
+      </td>
     </tr>
   {% endfor %}
   </tbody>
