@@ -1,4 +1,4 @@
-from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.auth.mixins import  UserPassesTestMixin
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404
@@ -23,7 +23,7 @@ from django.db import connection
 #             }
 #     return render(request, 'blog/home.html', context)
 
-class HomeView(ListView):
+class HomeView( ListView):
     model = Post
     template_name = 'blog/home.html'
 
@@ -59,7 +59,7 @@ class PostDetailView(DetailView):
     model = Post
 
 
-class PostCreateView(LoginRequiredMixin, CreateView):
+class PostCreateView( CreateView):
     model = Post
     fields = ['title', 'content', 'purchaser']
 
@@ -68,7 +68,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
-class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+class PostUpdateView( UserPassesTestMixin, UpdateView):
     model = Post
     fields = ['title', 'content']
 
@@ -81,7 +81,7 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         return self.request.user == post.author
 
 
-class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+class PostDeleteView( UserPassesTestMixin, DeleteView):
     model = Post
     success_url = '/'
 
@@ -104,7 +104,7 @@ class PlanView(ListView):
         return context
 
 
-class DayTaskSheetCreateView(LoginRequiredMixin, CreateView):
+class DayTaskSheetCreateView( CreateView):
     model = DayTaskSheet
     fields = ['shop']
 
@@ -113,7 +113,7 @@ class DayTaskSheetCreateView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
-class DayTaskCreateView(LoginRequiredMixin, CreateView):
+class DayTaskCreateView( CreateView):
     model = DayTask
     fields = ['site', 'worker', 'serial_number', 'operation', 'time']
 
@@ -139,7 +139,7 @@ class DayTaskSheetListView(ListView):
     paginate_by = 50
 
 
-@login_required
+# @login_required
 def daytask(request, sheet_id):
     if request.method == 'POST':
         dt_form = DayTaskForm(request.POST)
