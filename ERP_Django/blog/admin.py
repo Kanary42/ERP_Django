@@ -11,7 +11,9 @@ from .models import (Post,
                      TechCardOperations,
                      DayTask,
                      DayTaskSheet,
-                     ControlInput)
+                     ControlInput,
+                     LaserWeldingParameters,
+                     LaserHead)
 
 admin.site.register(Post)
 admin.site.register(WeldMaterial)
@@ -25,3 +27,5 @@ admin.site.register(TechCardOperations)
 admin.site.register(DayTask)
 admin.site.register(DayTaskSheet)
 admin.site.register(ControlInput)
+admin.site.register(LaserWeldingParameters)
+admin.site.register(LaserHead)

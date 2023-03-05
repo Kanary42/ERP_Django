@@ -136,5 +136,4 @@ LOGIN_URL = 'login'
 SITE_ID = 1
 LOGIN_REQUIRED_IGNORE_PATHS = [r'/login/$',
                                r'/register/$',
-                               r'/password-reset/$'
-                               ]
+                               r'/password-reset/$']

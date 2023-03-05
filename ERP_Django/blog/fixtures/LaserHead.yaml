@@ -1,0 +1,12 @@
+- model: blog.lasercomplex
+  pk: 1
+  fields:
+    name: LK1
+- model: blog.lasercomplex
+  pk: 2
+  fields:
+    name: LK2
+- model: blog.lasercomplex
+  pk: 3
+  fields:
+    name: LK3

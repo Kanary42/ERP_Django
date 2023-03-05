@@ -1,4 +1,4 @@
-from django.contrib.auth.mixins import  UserPassesTestMixin
+from django.contrib.auth.mixins import UserPassesTestMixin
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404
@@ -9,7 +9,7 @@ from django.views.generic import (ListView,
                                   DeleteView)
 
 from .models import Post, DayTaskSheet, DayTask, Order, SerialNumber, ControlInput
-from .forms import DayTaskForm
+from .forms import DayTaskForm, ControlInputForm
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.db.models import Prefetch
@@ -23,7 +23,7 @@ from django.db import connection
 #             }
 #     return render(request, 'blog/home.html', context)
 
-class HomeView( ListView):
+class HomeView(ListView):
     model = Post
     template_name = 'blog/home.html'
 
@@ -59,7 +59,7 @@ class PostDetailView(DetailView):
     model = Post
 
 
-class PostCreateView( CreateView):
+class PostCreateView(CreateView):
     model = Post
     fields = ['title', 'content', 'purchaser']
 
@@ -68,7 +68,7 @@ class PostCreateView( CreateView):
         return super().form_valid(form)
 
 
-class PostUpdateView( UserPassesTestMixin, UpdateView):
+class PostUpdateView(UserPassesTestMixin, UpdateView):
     model = Post
     fields = ['title', 'content']
 
@@ -81,7 +81,7 @@ class PostUpdateView( UserPassesTestMixin, UpdateView):
         return self.request.user == post.author
 
 
-class PostDeleteView( UserPassesTestMixin, DeleteView):
+class PostDeleteView(UserPassesTestMixin, DeleteView):
     model = Post
     success_url = '/'
 
@@ -100,11 +100,11 @@ class PlanView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['posts'] = Post.objects.prefetch_related('order_set','order_set__serialnumber_set')
+        context['posts'] = Post.objects.prefetch_related('order_set', 'order_set__serialnumber_set')
         return context
 
 
-class DayTaskSheetCreateView( CreateView):
+class DayTaskSheetCreateView(CreateView):
     model = DayTaskSheet
     fields = ['shop']
 
@@ -113,7 +113,7 @@ class DayTaskSheetCreateView( CreateView):
         return super().form_valid(form)
 
 
-class DayTaskCreateView( CreateView):
+class DayTaskCreateView(CreateView):
     model = DayTask
     fields = ['site', 'worker', 'serial_number', 'operation', 'time']
 
@@ -150,8 +150,26 @@ def daytask(request, sheet_id):
             messages.success(request, f'Account has been updated')
             return redirect('daytasksheet-detail', sheet_id)
     else:
-        dts_form = DayTaskForm(instance=request.user)
+        dt_form = DayTaskForm(instance=request.user)
     context = {
-            'dts_form': dts_form,
+            'dt_form': dt_form,
             }
     return render(request, 'blog/daytask_form.html', context)
+
+
+def control_input(request, pk):
+    if request.method == 'POST':
+        ci_form = ControlInputForm(request.POST,
+                                   request.FILES)
+        ci_form.fields['serial_number'].queryset = SerialNumber.objects.filter(order_number__post_id=pk)
+        if ci_form.is_valid():
+            ci_form.save()
+            messages.success(request, f'Control Input Saved')
+            return redirect('post-detail', pk)
+    else:
+        ci_form = ControlInputForm(instance=request.user)
+        ci_form.fields['serial_number'].queryset = SerialNumber.objects.filter(order_number__post_id=pk)
+    context = {
+            'form': ci_form,
+            }
+    return render(request, 'blog/control_input_form.html', context)

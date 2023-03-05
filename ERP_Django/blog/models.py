@@ -14,6 +14,9 @@ def content_file_name(instance, filename):
 class Purchaser(models.Model):
     purchaser = models.CharField(max_length=100)
 
+    def __str__(self):
+        return "{}".format(self.purchaser)
+
 
 class Instrument(models.Model):
     name = models.CharField(max_length=100)
@@ -45,7 +48,7 @@ class LaserComplex(models.Model):
 
 
 class LaserHead(models.Model):
-    HEAD_CHOICES = [(1, 'Wobbler 200 mm'),
+    HEAD_CHOICES = [(1, 'Wobbler 300 mm'),
                     (2, 'COAX'),
                     (3, '4-side'),
                     (4, 'Wobbler 500 mm'),
@@ -69,6 +72,11 @@ class LaserWeldingParameters(models.Model):
     welding_height = models.PositiveSmallIntegerField()
     cladding_height = models.DecimalField(max_digits=2,
                                           decimal_places=1)
+
+    def __str__(self):
+        return "{}, {}, {}".format(self.material,
+                                   self.cladding_height,
+                                   self.head)
 
 
 class Worksite(models.Model):
@@ -108,7 +116,7 @@ class Post(models.Model):
                                null=True)
 
     def __str__(self):
-        return self.title
+        return "{}".format(self.title)
 
     def get_absolute_url(self):
         return reverse('post-detail', kwargs={'pk': self.pk})
@@ -149,6 +157,11 @@ class ControlInput(models.Model):
     is_accepted_in = models.BooleanField()
     in_file = models.FileField(upload_to='ControlInput/')
 
+    def __str__(self):
+        return "{}, {}, {}".format(self.serial_number.order_number,
+                                   self.serial_number,
+                                   self.date_in)
+
 
 class ControlOutput(models.Model):
     serial_number = models.ForeignKey(SerialNumber,
@@ -156,6 +169,11 @@ class ControlOutput(models.Model):
     date_out = models.DateField(default=timezone.now)
     is_accepted_out = models.BooleanField()
     out_file = models.FileField(upload_to=content_file_name)
+
+    def __str__(self):
+        return "{}, {}, {}".format(self.serial_number.order_number,
+                                   self.serial_number,
+                                   self.date_in)
 
 
 class WeldMaterialUse(models.Model):
@@ -192,6 +210,11 @@ class TechCard(models.Model):
                                          blank=True,
                                          null=True)
 
+    def __str__(self):
+        return "{}, {}, {}".format(self.pk,
+                               self.serial_number.order_number,
+                               self.serial_number)
+
 
 class TechCardOperations(models.Model):
     tc_number = models.ForeignKey(TechCard,
@@ -217,7 +240,8 @@ class DayTaskSheet(models.Model):
         unique_together = ['date', 'shop']
 
     def __str__(self):
-        return str(self.date) + str(self.SHOP_CHOICES[self.shop - 1])
+        return "{}, {}".format(self.date,
+                               self.get_shop_display())
 
     def get_absolute_url(self):
         return reverse('daytasksheet-detail', kwargs={'pk': self.pk})
@@ -242,3 +266,9 @@ class DayTask(models.Model):
     operation = models.ForeignKey(TechCard,
                                   on_delete=models.RESTRICT)
     time = models.PositiveSmallIntegerField()
+
+    def __str__(self):
+        return "{}, {}, {}, {}".format(self.sheet.date,
+                                       self.get_site_display(),
+                                       self.serial_number.order_number,
+                                       self.serial_number)
