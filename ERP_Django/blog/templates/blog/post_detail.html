@@ -18,6 +18,10 @@
         <h2 class="article-title">{{ object.title }}</h2>
         <p class="article-content">{{ object.content }}</p>
         <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'control-input-create' object.id %}">Add Input Control</a>
+        {% for controlinput in controlinputs %}
+        <h6><a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ controlinput.in_file.url }}">{{ controlinput.serial_number }}</a>
+            {% if controlinput.is_accepted_in %}<span>&#10004;</span>{% else %}<span>&#10060;</span>{% endif %}</h6>
+        {% endfor %}
     </div>
 </article>
 {% render_comment_form for post %}

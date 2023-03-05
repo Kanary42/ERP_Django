@@ -1,6 +1,5 @@
 from django.contrib.auth.mixins import UserPassesTestMixin
 from django.contrib.auth.models import User
-from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import (ListView,
                                   DetailView,
@@ -12,8 +11,7 @@ from .models import Post, DayTaskSheet, DayTask, Order, SerialNumber, ControlInp
 from .forms import DayTaskForm, ControlInputForm
 from django.contrib import messages
 from django.shortcuts import render, redirect
-from django.db.models import Prefetch
-from django.db import connection
+from django import forms
 
 
 # def home(request):
@@ -58,6 +56,11 @@ class UserPostListView(ListView):
 class PostDetailView(DetailView):
     model = Post
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['controlinputs'] = ControlInput.objects.filter(serial_number__order_number__post_id=context[
+            'object'].pk)
+        return context
 
 class PostCreateView(CreateView):
     model = Post
@@ -161,14 +164,13 @@ def control_input(request, pk):
     if request.method == 'POST':
         ci_form = ControlInputForm(request.POST,
                                    request.FILES)
-        ci_form.fields['serial_number'].queryset = SerialNumber.objects.filter(order_number__post_id=pk)
         if ci_form.is_valid():
             ci_form.save()
             messages.success(request, f'Control Input Saved')
             return redirect('post-detail', pk)
     else:
         ci_form = ControlInputForm(instance=request.user)
-        ci_form.fields['serial_number'].queryset = SerialNumber.objects.filter(order_number__post_id=pk)
+        ci_form.fields['serial_number'] = forms.ModelChoiceField(SerialNumber.objects.filter(order_number__post_id=pk))
     context = {
             'form': ci_form,
             }

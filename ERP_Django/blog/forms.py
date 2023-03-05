@@ -13,11 +13,10 @@ class DayTaskForm(forms.ModelForm):
 
 
 class ControlInputForm(forms.ModelForm):
-    serial_number = forms.ModelChoiceField(queryset=SerialNumber.objects.none())
 
     class Meta:
         model = ControlInput
-        fields = ['date_in', 'is_accepted_in', 'in_file']
+        fields = ['serial_number', 'date_in', 'is_accepted_in', 'in_file']
 
 # class ProfileUpdateForm(forms.ModelForm):
 #     class Meta:
